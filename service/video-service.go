@@ -23,26 +23,16 @@ func New() VideoService {
 
 func (service *videoService) Save(video entity.Video) error {
 	return Config.DB.Create(video).Error
-	// ; err != nil {
-	// 	return err
-	// }
-
-	// service.videos = append(service.videos, video)
-	// return nil
 }
+
 func (service *videoService) FindAll() ([]entity.Video, error) {
 	var data []entity.Video
-	err := Config.DB.Take(&data).Error
+	err := Config.DB.Find(&data).Error
 	return data, err
 }
 
 func (service *videoService) Update(video entity.Video) error {
-	return Config.DB.Update(video).Error
-	// err != nil
-	// {
-	// 	return err
-	// }
-	// return nil
+	return Config.DB.Save(&video).Error
 }
 func (service *videoService) GetDetails(id uint64) (entity.Video, error) {
 	var data entity.Video
@@ -50,5 +40,5 @@ func (service *videoService) GetDetails(id uint64) (entity.Video, error) {
 	return data, err
 }
 func (service *videoService) Delete(id uint64) error {
-	return Config.DB.Delete(id).Error
+	return Config.DB.Delete(&entity.Video{}, id).Error
 }

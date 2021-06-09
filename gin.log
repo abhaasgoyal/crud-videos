@@ -10,3 +10,6 @@
 [GIN-debug] PUT    /videos/:id               --> main.main.func4 (3 handlers)
 [GIN-debug] DELETE /videos/:id               --> main.main.func5 (3 handlers)
 [GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2021/06/09 - 11:42:48 | 200 |   11.910106ms |             ::1 | PUT      "/videos/1"
+[GIN-debug] redirecting request 301: /videos --> /videos
+[GIN] 2021/06/09 - 11:42:53 | 200 |    1.162915ms |             ::1 | GET      "/videos"

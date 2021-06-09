@@ -28,10 +28,6 @@ func New(service service.VideoService) VideoController {
 
 func (c *controller) FindAll() ([]entity.Video, error) {
 	return c.service.FindAll()
-	// if err != nil {
-	// 	return entity.Video{}
-	// }
-	// return query				/
 }
 func (c *controller) Save(ctx *gin.Context) error {
 	var video entity.Video

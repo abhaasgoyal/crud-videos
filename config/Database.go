@@ -16,7 +16,7 @@ type DBConfig struct {
 	Password string
 }
 
-// A sample (toy) database - hide in production!
+// A sample database - hide in production!
 func BuildDBConfig() *DBConfig {
 	dbConfig := DBConfig{
 		Host:     "localhost",
