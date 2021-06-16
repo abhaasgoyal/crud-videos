@@ -19,7 +19,7 @@ type DBConfig struct {
 // A sample database - hide in production!
 func BuildDBConfig() *DBConfig {
 	dbConfig := DBConfig{
-		Host:     "localhost",
+		Host:     "host.docker.internal",
 		Port:     3306,
 		User:     "abhaas",
 		Password: "1234",
